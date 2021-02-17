@@ -1,0 +1,37 @@
+<label for="">Server Name</label>
+<!-- <input type="text"
+        class="form-control"
+        (input) = "onUpdateServerName($event)"> -->
+<input type="text"
+class="form-control"
+[(ngModel)] = "serverName">
+<!-- <p>{{ serverName }}</p> -->
+<button class="btn btn-primary" 
+        [disabled]="!allowNewServer"
+        (click)="onCreateServer()"> Add Server </button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{ serverCreationStatus }}</p>-->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+<app-server *ngFor="let server of servers"></app-server>
+<br>
+
+<hr>
+<label for="">Name:</label>
+<input type="text" 
+        class="form-control"
+        [(ngModel)] = 'name'>
+<p>{{ name }}</p>
+<button class="btn btn-primary"
+        [disabled] = "name == ''"
+        (click)="name = ''"
+        >Restablecer</button>
+<hr><br>
+
+<button class="btn btn-primary"
+        (click) ="showParagraph()">
+        Display details
+</button>
+<p *ngIf="paragraphCreated">Secret password: {{ contentPassword}}</p>
+<app-server2 *ngFor="let server of servers2"></app-server2>
+
+
