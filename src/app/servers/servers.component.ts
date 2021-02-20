@@ -53,7 +53,7 @@ export class ServersComponent implements OnInit {
   }
 
   showParagraph(){
-    this.paragraphCreated = true;
+    this.paragraphCreated = !this.paragraphCreated;
     this.servers2.push(this.servers2.length + 1);
   }
 }

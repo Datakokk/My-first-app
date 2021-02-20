@@ -32,6 +32,12 @@ class="form-control"
         Display details
 </button>
 <p *ngIf="paragraphCreated">Secret password: {{ contentPassword}}</p>
-<app-server2 *ngFor="let server of servers2"></app-server2>
+<!--<app-server2 *ngFor="let server of servers2"></app-server2>-->
+
+<div *ngFor="let elemento of servers2"
+[ngStyle]="{backgroundColor:elemento >= 5 ? 'blue':'#DAFF33'}"
+[ngClass]="{'white-text':elemento >= 5}"
+>{{ elemento }}</div>
+
 
 
